@@ -1,31 +1,479 @@
 <!doctype html>
-<html lang="ru" data-stub>
+<html lang="ru">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Сайт выездного автоэлектрика · демо готовится</title>
-<meta name="robots" content="noindex">
-<meta http-equiv="refresh" content="120">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AUTO-VOLT · выездной автоэлектрик в Алматы 24/7</title>
+<meta name="description" content="Выездной автоэлектрик по Алматы и области круглосуточно. Машина не заводится – приедем, продиагностируем и найдём причину. Выезд от 8 000 ₸.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AUTO-VOLT · выездной автоэлектрик в Алматы 24/7">
+<meta property="og:description" content="Машина не заводится? Приедем и найдём причину. Выезд от 8 000 ₸.">
+<meta property="og:url" content="https://web-atelie.ru/avtoelektrik/">
+<meta property="og:image" content="https://web-atelie.ru/avtoelektrik/assets/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E1B33'/%3E%3Cpath d='M18 4 8 18h7l-2 10 11-15h-7z' fill='%23FF7A1A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Manrope:wght@400;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@1,700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRepair","name":"AUTO-VOLT","description":"Выездной автоэлектрик по Алматы и области, 24/7","areaServed":"Алматы и Алматинская область","openingHours":"Mo-Su 00:00-24:00","priceRange":"от 8 000 ₸","url":"https://web-atelie.ru/avtoelektrik/"}</script>
 <style>
-:root{--bg:#F6F3EE;--ink:#1F1E1C;--muted:#6B655C;--acc:#8A6737}
-@media (prefers-color-scheme:dark){:root{--bg:#161615;--ink:#EDE7DC;--muted:#A9A195;--acc:#C9A66B}}
-*{box-sizing:border-box}html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Manrope,system-ui,sans-serif;display:grid;place-items:center;padding:24px}
-main{max-width:560px;text-align:center;display:flex;flex-direction:column;gap:18px;align-items:center}
-.k{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);font-weight:600}
-h1{font:500 clamp(2rem,6vw,3rem)/1.1 "Cormorant Garamond",Georgia,serif;margin:0;text-wrap:balance}
-p{margin:0;color:var(--muted)}
-.bar{width:220px;height:3px;background:color-mix(in srgb,var(--acc) 20%,transparent);border-radius:3px;overflow:hidden}
-.bar i{display:block;height:100%;width:40%;background:var(--acc);animation:m 1.6s ease-in-out infinite}
-@keyframes m{0%{transform:translateX(-100%)}100%{transform:translateX(250%)}}
-@media (prefers-reduced-motion:reduce){.bar i{animation:none;width:60%}}
+:root{
+  --bg:#F4F6FA; --card:#FFFFFF; --navy:#0E1B33; --navy2:#16284A; --ink:#13203A; --soft:#5A6478; --line:#E3E8F0;
+  --or:#FF7A1A; --or-btn:#C24A04; --or-text:#D4560A; --wa:#15803D; --ok:#22A04B;
+  --r:16px; --wrap:1200px; --sh:0 6px 24px rgb(14 27 51 / .07);
+  --f:"Montserrat",system-ui,sans-serif; --hand:"Caveat",cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 var(--f);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.15;font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(24px,2.6vw,32px)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.sub{color:var(--soft);margin:6px 0 0;font-size:14px}
+.hand{font-family:var(--hand);font-size:22px;line-height:1.1;color:var(--navy)}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+svg.i{width:28px;height:28px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;gap:12px;border-radius:999px;padding:12px 24px 12px 18px;color:#fff;text-decoration:none;font-weight:700;font-size:16px;line-height:1.2;border:0;cursor:pointer;box-shadow:0 8px 20px rgb(194 74 4 / .25)}
+.btn small{display:block;font-weight:500;font-size:12px;opacity:.9}
+.btn svg{width:26px;height:26px}
+.btn--or{background:var(--or-btn)}
+.btn--wa{background:var(--wa);box-shadow:0 8px 20px rgb(21 128 61 / .25)}
+.btn:hover{filter:brightness(1.08)}
+
+/* шапка */
+.hdr{position:sticky;top:0;z-index:30;background:var(--navy);color:#fff}
+.hdr__in{display:flex;align-items:center;gap:28px;height:72px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:46px;height:30px}
+.logo b{display:block;font-size:21px;font-weight:800;letter-spacing:.01em}
+.logo b em{font-style:normal;color:var(--or)}
+.logo small{display:block;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:#B5C0D6;margin-top:1px}
+.nav{display:flex;gap:22px;margin-left:auto}
+.nav a{text-decoration:none;font-size:13px;font-weight:600;color:#D6DDEA}
+.nav a:hover{color:#fff}
+.hdr__item{display:flex;align-items:center;gap:10px;font-size:11px;color:#B5C0D6;line-height:1.25;text-decoration:none}
+.hdr__item b{display:block;color:#fff;font-size:16px}
+.hdr__item svg{color:#fff;width:30px;height:30px}
+.burger{display:none;background:none;border:0;color:#fff;padding:6px;cursor:pointer}
+.burger svg{width:28px;height:28px}
+
+/* первый экран */
+.hero{position:relative;overflow:hidden;background:var(--bg)}
+.hero__photo{position:absolute;top:0;right:0;bottom:0;width:58%}
+.hero__photo img{width:100%;height:100%;object-fit:cover;object-position:55% 40%}
+.hero__photo::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,rgb(244 246 250 / .85) 18%,rgb(244 246 250 / 0) 52%);z-index:1}
+.hero__in{position:relative;z-index:2;padding:30px 0 40px;max-width:640px}
+.tag{display:inline-block;background:var(--or-btn);color:#fff;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.03em;padding:6px 14px;border-radius:8px}
+.hero h1{font-size:clamp(32px,4.2vw,52px);margin:16px 0 0}
+.hero h1 span{display:block;color:var(--or-text)}
+.hero__geo{font-size:18px;font-weight:600;margin:14px 0 0}
+.feats{display:flex;flex-wrap:wrap;gap:14px 26px;margin:22px 0 26px}
+.feat{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;line-height:1.3}
+.feat svg{color:var(--or-text)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero__extra{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-top:24px}
+.price{background:var(--or-btn);color:#fff;border-radius:14px;padding:10px 18px;box-shadow:var(--sh)}
+.price small{display:block;font-size:12px;font-weight:700;text-transform:uppercase}
+.price b{font-size:30px;font-weight:800;line-height:1}
+.live{display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:12px 16px;box-shadow:var(--sh);font-size:12px;color:var(--soft)}
+.live b{display:block;color:var(--ink);font-size:13px}
+.live i{width:9px;height:9px;border-radius:50%;background:var(--ok);margin-left:6px;animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+
+/* карточки */
+.sec{padding:56px 0 0}
+.sec__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px 24px;margin-bottom:24px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card{background:var(--card);border-radius:var(--r);padding:22px;box-shadow:var(--sh);border:1px solid var(--line)}
+.card svg{color:var(--navy);width:34px;height:34px;margin-bottom:14px}
+.card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.card p{margin:0;font-size:13px;color:var(--soft)}
+a.card{text-decoration:none;transition:transform .2s,box-shadow .2s}
+a.card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgb(14 27 51 / .12)}
+.card--q svg{color:var(--or-text)}
+.svc{display:flex;gap:14px;align-items:flex-start}
+.svc svg{color:var(--or-text);margin:0;width:32px;height:32px}
+
+/* тёмный блок */
+.dark{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);background:var(--navy);color:#fff;border-radius:20px;overflow:hidden}
+.dark__txt{padding:36px 40px}
+.dark h2{font-size:clamp(24px,2.4vw,30px)}
+.dark p{color:#C9D2E3;margin:8px 0 18px}
+.checks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 20px}
+.checks li{display:flex;gap:10px;align-items:center;font-size:14px}
+.checks li::before{content:"";width:16px;height:16px;flex:none;background:var(--or);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 12.5 9.5 18 20 6' stroke='black' stroke-width='3.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 12.5 9.5 18 20 6' stroke='black' stroke-width='3.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.dark__note{font-weight:700;margin:20px 0 22px}
+.dark__ph{position:relative;min-height:300px}
+.dark__ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dark__ph::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy),rgb(14 27 51 / 0) 35%);z-index:1}
+.dark__ph .hand{position:absolute;right:24px;top:22px;z-index:2;color:#fff;transform:rotate(-6deg);text-align:right;text-shadow:0 2px 8px rgb(0 0 0 / .6)}
+
+/* шаги */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:s}
+.step{position:relative;counter-increment:s}
+.step::before{content:"0" counter(s);position:absolute;top:18px;left:18px;width:30px;height:30px;border-radius:50%;background:var(--or-btn);color:#fff;font-weight:700;font-size:12px;display:grid;place-items:center}
+.step svg{margin-left:42px;color:var(--navy2)}
+
+/* баннер цены */
+.offer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:30px;align-items:center;background:linear-gradient(115deg,#fff 0%,#E8F0FB 60%,#CFE0F5 100%);border-radius:20px;padding:34px 40px;box-shadow:var(--sh);border:1px solid var(--line);position:relative;overflow:hidden}
+.offer h2{font-size:20px;text-transform:uppercase;color:var(--navy)}
+.offer big{display:block;font-size:clamp(34px,4vw,46px);font-weight:800;color:var(--navy);line-height:1.1;margin:6px 0 10px}
+.offer p{margin:0;font-weight:600}
+.offer small{display:block;color:var(--soft);margin-top:10px;font-size:12.5px}
+.offer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.offer li{display:flex;gap:12px;align-items:center;font-weight:600;font-size:14px}
+.offer li svg{width:20px;height:20px;color:var(--navy)}
+.offer .hand{position:absolute;right:30px;top:24px;transform:rotate(-5deg);text-align:right}
+
+/* почему */
+.why{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.why .card{padding:16px;display:flex;gap:10px;align-items:flex-start}
+.why svg{color:var(--or-text);width:28px;height:28px;margin:0}
+.why b{display:block;font-size:13px}
+.why span{display:block;font-size:11.5px;color:var(--soft);line-height:1.35}
+
+/* работы */
+.works{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.works figure{margin:0}
+.works img{border-radius:12px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.works figcaption{font-size:12px;margin-top:8px;font-weight:600}
+
+/* отзывы + вопросы */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:32px;align-items:start}
+.rev{position:relative}
+.rev__item{display:none}
+.rev__item.is-on{display:block}
+.rev__top{display:flex;gap:14px;align-items:center;margin-bottom:10px}
+.ava{width:52px;height:52px;border-radius:50%;background:var(--navy2);color:#fff;display:grid;place-items:center;font-weight:700;font-size:18px}
+.stars{color:#F5A623;letter-spacing:2px;font-size:15px}
+.rev p{margin:0;font-size:14px}
+.rev time{display:block;color:var(--soft);font-size:12px;margin-top:10px}
+.rev__nav{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+.rev__nav button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:18px;color:var(--navy)}
+.dots{display:flex;gap:6px}
+.dots i{width:7px;height:7px;border-radius:50%;background:#C6CEDB}
+.dots i.is-on{background:var(--navy)}
+.demo-note{font-size:12px;color:var(--soft);margin:12px 0 0}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:8px}
+.faq summary{list-style:none;cursor:pointer;padding:13px 18px;font-weight:600;font-size:14px;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:20px;line-height:1;color:var(--navy)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{margin:0;padding:0 18px 14px;color:var(--soft);font-size:14px}
+
+/* финал */
+.final{position:relative;margin-top:64px;color:#fff;overflow:hidden}
+.final img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.final::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgb(14 27 51 / .95) 0%,rgb(14 27 51 / .75) 45%,rgb(14 27 51 / .25));z-index:1}
+.final__in{position:relative;z-index:2;padding:52px 20px}
+.final h2{font-size:clamp(26px,3vw,36px)}
+.final h2 span{display:block;color:var(--or)}
+.final p{margin:10px 0 24px;font-size:16px;color:#D6DDEA}
+.final__row{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center}
+.final .feat svg{color:#fff}
+.final .hand{color:#fff;transform:rotate(-4deg)}
+
+/* подвал */
+.foot{background:#0A1426;color:#B5C0D6;font-size:13px}
+.foot__in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;padding:28px 20px 34px}
+.foot nav{display:flex;flex-wrap:wrap;gap:18px}
+.foot nav a{text-decoration:none}
+.foot nav a:hover{color:#fff}
+.foot__ph{color:#fff;font-weight:700;font-size:17px;text-decoration:none}
+.foot__demo{flex-basis:100%;font-size:12px;color:#8E9AB2}
+/* подпись разработчика в подвале: «Создан в «Веб-Ателье»» – одинаковая на всех сайтах, не менять */
+.foot__made{display:inline-block;white-space:nowrap;font-style:italic;font-size:14px;line-height:1.4;color:#B5C0D6;padding:.4em 0}
+.foot__made a{display:inline;margin:0 0 0 .3em;color:inherit;text-decoration:none;font-family:Calibri,"Carlito",sans-serif;font-weight:700;font-style:italic;font-size:1.12em}
+.foot__made a:hover{color:#fff;text-decoration:underline;text-underline-offset:.18em}
+.foot__made img{display:inline-block;width:40px;height:52px;max-width:none;margin-left:.35em;vertical-align:-7px}
+
+/* мобильное меню */
+.mnav{display:none}
+
+@media (max-width:1100px){
+  .nav,.hdr__item--time{display:none}
+  .hdr__item--ph{margin-left:auto}
+  .why{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .works{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .grid4,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dark,.offer,.two{grid-template-columns:minmax(0,1fr)}
+  .offer .hand{position:static;transform:none;text-align:left}
+  .hero__photo{position:relative;width:auto;height:300px;margin:0 -20px}
+  .hero__photo::before{background:linear-gradient(180deg,rgb(244 246 250 / 0) 55%,var(--bg))}
+  .hero__wrap{display:flex;flex-direction:column}
+  .hero__in{padding-top:22px}
+}
+@media (max-width:600px){
+  .hdr__in{height:62px;gap:12px}
+  .logo b{font-size:18px}
+  .logo small{display:none}
+  .hdr__item--ph b{font-size:14px}
+  .hdr__item--ph span,.hdr__item--ph svg{display:none}
+  .burger{display:block}
+  .mnav.is-on{display:flex;flex-direction:column;background:var(--navy);padding:6px 20px 16px;gap:2px}
+  .mnav a{color:#fff;text-decoration:none;padding:10px 0;font-weight:600;border-top:1px solid #23365C}
+  .grid4,.steps,.why{grid-template-columns:minmax(0,1fr)}
+  .grid4.grid4--q{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid4--q .card{padding:16px}
+  .works{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .checks{grid-template-columns:minmax(0,1fr)}
+  .dark__txt,.offer{padding:26px 22px}
+  .btn{width:100%}
+  .hero__photo{height:240px}
+  .sec{padding-top:44px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
-<body><main>
-<div class="k">Демо-версия по вашему ТЗ</div>
-<h1>Сайт выездного автоэлектрика</h1>
-<div class="bar" aria-hidden="true"><i></i></div>
-<p>Сайт сейчас собирается по вашему техническому заданию.<br>Будет готов сегодня к <b>22:15</b> – по этой же ссылке.</p>
-<p style="font-size:.85rem">Страница обновится сама.</p>
-</main></body></html>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 7.8 19.6z"/><path d="M9 8.5c0 3 2.5 6.5 6.5 7l1-1.6-2-1-1 .9c-1-.4-2.4-1.8-2.8-2.8l.9-1-1-2-1.6 1"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M3 16v-4l2-5h14l2 5v4z"/><path d="M5 16v3M19 16v3M3 12h18"/><circle cx="7.5" cy="14" r=".8"/><circle cx="16.5" cy="14" r=".8"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-batt" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M7 7V4h3v3M14 7V4h3v3M7 13h4M15 11v4M13 13h4"/></symbol>
+  <symbol id="i-engine" viewBox="0 0 24 24"><path d="M4 10h3l2-2h5l1 2h2l2-2h1v8h-1l-2-2h-2v3H8l-2-2H4z"/><path d="M2 12h2"/></symbol>
+  <symbol id="i-fuel" viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M3 21h12M4 10h10"/><path d="M14 8h2a2 2 0 0 1 2 2v6a1.5 1.5 0 0 0 3 0V8l-3-3"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5"/></symbol>
+  <symbol id="i-q" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17.5v.1"/></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20M8 9l2 2 3-4 3 3"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path d="M7 3h10v4l-2 2v11a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V9L7 7z"/><path d="M9 13h6M9 16h6"/></symbol>
+  <symbol id="i-wire" viewBox="0 0 24 24"><path d="M3 18c4 0 4-12 9-12s5 12 9 12"/><circle cx="3" cy="18" r="1.5"/><circle cx="21" cy="18" r="1.5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h.1M12 10h.1M16 10h.1"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3l7.5-7.5a4 4 0 0 0-5-5l2.5 2.5-1 2-2 1-2.5-2.5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v4c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 10v4c0 1.7 3.1 3 7 3s7-1.3 7-3v-4M5 14v4c0 1.7 3.1 3 7 3s7-1.3 7-3v-4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-logo" viewBox="0 0 46 30"><path d="M2 27 16 8l7 9 5-6 16 16" stroke-width="3.4"/><path d="M20 27l6-8 4 5" stroke-width="3.4"/></symbol>
+</svg>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="logo" href="#top" aria-label="AUTO-VOLT – на главную">
+      <svg class="i" style="color:var(--or)"><use href="#i-logo"/></svg>
+      <span><b>AUTO-<em>VOLT</em></b><small>Автоэлектрик · Алматы и область</small></span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#uslugi">Услуги</a><a href="#pochemu">Преимущества</a><a href="#raboty">Наши работы</a><a href="#otzyvy">Отзывы</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="hdr__item hdr__item--time"><svg class="i"><use href="#i-clock"/></svg><div><b>24/7</b>Работаем круглосуточно</div></div>
+    <a class="hdr__item hdr__item--ph" href="tel:+77000000000"><svg class="i"><use href="#i-phone"/></svg><div><b>+7 700 000 00 00</b><span>Звоните / WhatsApp</span></div></a>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Меню">
+    <a href="#uslugi">Услуги</a><a href="#pochemu">Преимущества</a><a href="#raboty">Наши работы</a><a href="#otzyvy">Отзывы</a><a href="#faq">Частые вопросы</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero__wrap">
+      <div class="hero__photo"><img src="assets/hero.webp" alt="Автоэлектрик проверяет двигатель под открытым капотом" width="1200" height="900" fetchpriority="high"></div>
+      <div class="hero__in">
+        <span class="tag">Выездной автоэлектрик</span>
+        <h1>Не заводится автомобиль? <span>Приедем и найдём причину!</span></h1>
+        <p class="hero__geo">Выезд по г. Алматы и области</p>
+        <div class="feats">
+          <div class="feat"><svg class="i"><use href="#i-clock"/></svg>24/7<br>Круглосуточно</div>
+          <div class="feat"><svg class="i"><use href="#i-pin"/></svg>Выезд по г. Алматы<br>и области</div>
+          <div class="feat"><svg class="i"><use href="#i-car"/></svg>Все марки<br>автомобилей</div>
+        </div>
+        <div class="hero__cta">
+          <a class="btn btn--or" href="tel:+77000000000"><svg class="i"><use href="#i-phone"/></svg><span>Позвонить<small>Быстрый вызов</small></span></a>
+          <a class="btn btn--wa" href="#zayavka"><svg class="i"><use href="#i-wa"/></svg><span>Написать в WhatsApp<small>Ответим сразу</small></span></a>
+        </div>
+        <div class="hero__extra">
+          <div class="price"><small>Выезд от</small><b>8 000 ₸</b></div>
+          <span class="hand">Честные цены –<br>без скрытых доплат</span>
+          <div class="live"><div><b>AUTO-VOLT</b>Мастер уже выезжает к вам!</div><i></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="problemy">
+    <div class="wrap">
+      <div class="sec__head">
+        <div><h2>Что случилось с машиной?</h2><p class="sub">Выберите проблему – мы подскажем, что делать, и приедем на помощь.</p></div>
+        <span class="hand">Не знаете точную причину?<br>Просто позвоните – мы поможем!</span>
+      </div>
+      <div class="grid4 grid4--q">
+        <a class="card" href="#zayavka"><svg class="i"><use href="#i-car"/></svg><h3>Машина не заводится</h3><p>Стартер молчит, двигатель не запускается</p></a>
+        <a class="card" href="#zayavka"><svg class="i"><use href="#i-bolt"/></svg><h3>Стартер не крутит</h3><p>Щелчки, тишина, медленно крутит</p></a>
+        <a class="card" href="#zayavka"><svg class="i"><use href="#i-batt"/></svg><h3>Проблемы с генератором</h3><p>Нет зарядки, горит значок аккумулятора</p></a>
+        <a class="card" href="#zayavka"><svg class="i"><use href="#i-batt"/></svg><h3>Сел аккумулятор</h3><p>Машина не реагирует или быстро разряжается</p></a>
+        <a class="card card--q" href="#zayavka"><svg class="i"><use href="#i-engine"/></svg><h3>Горит Check Engine</h3><p>Нужно определить причину ошибки</p></a>
+        <a class="card card--q" href="#zayavka"><svg class="i"><use href="#i-fuel"/></svg><h3>Проблемы с бензонасосом</h3><p>Не качает топливо, двигатель не запускается</p></a>
+        <a class="card" href="#zayavka"><svg class="i"><use href="#i-plug"/></svg><h3>Проблемы с электрикой</h3><p>Предохранители, проводка, короткое замыкание</p></a>
+        <a class="card card--q" href="#zayavka"><svg class="i"><use href="#i-q"/></svg><h3>Другая проблема</h3><p>Позвоните мастеру – подскажем!</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="uslugi">
+    <div class="wrap">
+      <div class="sec__head"><div><h2>Наши услуги</h2><p class="sub">Полный спектр услуг автоэлектрика с выездом по г. Алматы и области</p></div></div>
+      <div class="grid4">
+        <div class="card svc"><svg class="i"><use href="#i-bolt"/></svg><div><h3>Автоэлектрик с выездом</h3><p>Поиск и устранение электрических неисправностей</p></div></div>
+        <div class="card svc"><svg class="i"><use href="#i-laptop"/></svg><div><h3>Компьютерная диагностика</h3><p>Сканирование систем и поиск ошибок</p></div></div>
+        <div class="card svc"><svg class="i"><use href="#i-gear"/></svg><div><h3>Ремонт стартеров</h3><p>Диагностика и ремонт стартера</p></div></div>
+        <div class="card svc"><svg class="i"><use href="#i-gear"/></svg><div><h3>Ремонт генераторов</h3><p>Проверка зарядки и ремонт генератора</p></div></div>
+        <div class="card svc"><svg class="i"><use href="#i-fuel"/></svg><div><h3>Топливная система</h3><p>Диагностика подачи топлива и давления</p></div></div>
+        <div class="card svc"><svg class="i"><use href="#i-fuel"/></svg><div><h3>Замена бензонасоса</h3><p>Замена и проверка работы системы</p></div></div>
+        <div class="card svc"><svg class="i"><use href="#i-filter"/></svg><div><h3>Замена топливного фильтра</h3><p>Замена фильтра и проверка подачи топлива</p></div></div>
+        <div class="card svc"><svg class="i"><use href="#i-wire"/></svg><div><h3>Электропроводка</h3><p>Поиск обрывов, плохих контактов и КЗ</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="dark">
+        <div class="dark__txt">
+          <h2>Машина не заводится?</h2>
+          <p>Не меняйте детали наугад. Причиной может быть:</p>
+          <ul class="checks">
+            <li>Аккумулятор</li><li>Проводка</li><li>Стартер</li><li>Иммобилайзер</li>
+            <li>Генератор</li><li>Предохранители</li><li>Топливный насос</li><li>Электронные системы</li>
+          </ul>
+          <p class="dark__note">Мы сначала диагностируем – потом ремонтируем.</p>
+          <a class="btn btn--or" href="tel:+77000000000"><svg class="i"><use href="#i-phone"/></svg><span>Вызвать мастера</span></a>
+        </div>
+        <div class="dark__ph"><img src="assets/diag.webp" alt="Мастер подключает диагностический сканер к автомобилю" width="1000" height="750" loading="lazy"><span class="hand">Диагностика<br>за 30 минут!</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="kak">
+    <div class="wrap">
+      <div class="sec__head"><div><h2>Как мы работаем</h2><p class="sub">Просто и быстро</p></div></div>
+      <div class="steps">
+        <div class="card step"><svg class="i"><use href="#i-phone"/></svg><h3>Вы звоните</h3><p>Рассказываете, что произошло с автомобилем</p></div>
+        <div class="card step"><svg class="i"><use href="#i-chat"/></svg><h3>Уточняем детали</h3><p>Марка, модель, симптомы неисправности</p></div>
+        <div class="card step"><svg class="i"><use href="#i-car"/></svg><h3>Мастер выезжает</h3><p>Приезжаем в указанное место</p></div>
+        <div class="card step"><svg class="i"><use href="#i-wrench"/></svg><h3>Диагностика и ремонт</h3><p>Находим причину и устраняем неисправность</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="cena">
+    <div class="wrap">
+      <div class="offer">
+        <div>
+          <h2>Выезд автоэлектрика</h2>
+          <big>от 8 000 ₸</big>
+          <p>Выезд по г. Алматы и области</p>
+          <small>Стоимость ремонта зависит от неисправности и объёма работ – называем её до начала работ.</small>
+        </div>
+        <ul>
+          <li><svg class="i"><use href="#i-check"/></svg>24/7 – работаем круглосуточно</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Оперативный выезд по Алматы и области</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Опытные мастера, современное оборудование</li>
+          <li><svg class="i"><use href="#i-shield"/></svg>Гарантия на работы</li>
+          <li><svg class="i"><use href="#i-coins"/></svg>Честные цены, без скрытых доплат</li>
+        </ul>
+        <span class="hand">Ниже, чем<br>вы думаете!</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="pochemu">
+    <div class="wrap">
+      <div class="sec__head"><div><h2>Почему выбирают AUTO-VOLT?</h2></div></div>
+      <div class="why">
+        <div class="card"><svg class="i"><use href="#i-clock"/></svg><div><b>24/7</b><span>Работаем круглосуточно</span></div></div>
+        <div class="card"><svg class="i"><use href="#i-pin"/></svg><div><b>Выезд</b><span>По г. Алматы и области</span></div></div>
+        <div class="card"><svg class="i"><use href="#i-search"/></svg><div><b>Диагностика</b><span>Ищем настоящую причину</span></div></div>
+        <div class="card"><svg class="i"><use href="#i-shield"/></svg><div><b>Гарантия</b><span>На работы и запчасти</span></div></div>
+        <div class="card"><svg class="i"><use href="#i-car"/></svg><div><b>Все марки</b><span>Японские, европейские, корейские</span></div></div>
+        <div class="card"><svg class="i"><use href="#i-coins"/></svg><div><b>От 8 000 ₸</b><span>Выезд по Алматы и области</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="raboty">
+    <div class="wrap">
+      <div class="sec__head"><div><h2>Наши работы</h2><p class="sub">Фото с выездов мастеров</p></div></div>
+      <div class="works">
+        <figure><img src="assets/w1.webp" alt="Мастер работает под капотом" width="600" height="450" loading="lazy"><figcaption>Ремонт стартера</figcaption></figure>
+        <figure><img src="assets/w5.webp" alt="Подкапотное пространство автомобиля" width="600" height="450" loading="lazy"><figcaption>Ремонт генератора</figcaption></figure>
+        <figure><img src="assets/w4.webp" alt="Двигатель с топливными шлангами" width="600" height="450" loading="lazy"><figcaption>Замена бензонасоса</figcaption></figure>
+        <figure><img src="assets/w6.webp" alt="Двигатель автомобиля" width="600" height="450" loading="lazy"><figcaption>Замена топливного фильтра</figcaption></figure>
+        <figure><img src="assets/w2.webp" alt="Компьютерная диагностика в салоне" width="600" height="450" loading="lazy"><figcaption>Компьютерная диагностика</figcaption></figure>
+        <figure><img src="assets/w3.webp" alt="Ящик с инструментом автоэлектрика" width="600" height="450" loading="lazy"><figcaption>Электропроводка</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap two">
+      <div id="otzyvy">
+        <h2>Отзывы клиентов</h2><p class="sub">Отзывы с Google и 2GIS</p>
+        <div class="card rev" style="margin-top:22px">
+          <div class="rev__item is-on"><div class="rev__top"><span class="ava">А</span><div><b>Алексей, Алматы</b><div class="stars">★★★★★</div></div></div><p>Машина не заводилась у дома в 6 утра, мастер приехал через 40 минут. Оказался окисленный контакт на массе – почистил, всё завелось. Спасибо, рекомендую!</p><time>12.09.2026</time></div>
+          <div class="rev__item"><div class="rev__top"><span class="ava">Д</span><div><b>Дана, Каскелен</b><div class="stars">★★★★★</div></div></div><p>Горел значок аккумулятора. Приехали за город, проверили генератор прямо на месте и заменили щётки. Цену назвали заранее, так и вышло.</p><time>28.08.2026</time></div>
+          <div class="rev__item"><div class="rev__top"><span class="ava">Т</span><div><b>Тимур, Алматы</b><div class="stars">★★★★☆</div></div></div><p>Бензонасос поменяли быстро и аккуратно. Ждал мастера чуть дольше обещанного из-за пробок, но предупредили заранее.</p><time>03.08.2026</time></div>
+          <div class="rev__nav"><button type="button" data-d="-1" aria-label="Предыдущий отзыв">‹</button><div class="dots"><i class="is-on"></i><i></i><i></i></div><button type="button" data-d="1" aria-label="Следующий отзыв">›</button></div>
+        </div>
+        <p class="demo-note">Отзывы в этом демо условные – на рабочем сайте будут настоящие отзывы с Google и 2GIS.</p>
+      </div>
+      <div class="faq" id="faq">
+        <h2>Частые вопросы</h2>
+        <div style="margin-top:22px">
+          <details><summary>Вы работаете ночью?</summary><p>Да, круглосуточно и без выходных. Ночной выезд стоит столько же.</p></details>
+          <details><summary>Сколько стоит выезд?</summary><p>Выезд по Алматы – от 8 000 ₸. За город считаем по расстоянию, сумму называем по телефону до выезда.</p></details>
+          <details><summary>Выезжаете, если машина не заводится?</summary><p>Да, это самый частый вызов. Приедем туда, где стоит машина: к дому, на парковку, на трассу.</p></details>
+          <details><summary>Ремонтируете стартеры и генераторы?</summary><p>Да. Простые неисправности устраняем на месте, сложный ремонт – в мастерской, обычно за 1 день.</p></details>
+          <details><summary>Меняете бензонасосы?</summary><p>Да, меняем бензонасосы и топливные фильтры, проверяем давление в системе.</p></details>
+          <details><summary>Работаете со всеми марками?</summary><p>Да: японские, корейские, европейские и отечественные автомобили, бензин и дизель.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="zayavka">
+    <img src="assets/city.webp" alt="" width="1600" height="700" loading="lazy">
+    <div class="wrap final__in">
+      <h2>Авто не заводится? <span>Не теряйте время!</span></h2>
+      <p>AUTO-VOLT приедет к вам.</p>
+      <div class="final__row">
+        <div class="feat"><svg class="i"><use href="#i-pin"/></svg>Выезд по г. Алматы<br>и области</div>
+        <div class="feat"><svg class="i"><use href="#i-clock"/></svg>24/7<br>Круглосуточно</div>
+        <div class="feat"><svg class="i"><use href="#i-car"/></svg>Все марки<br>автомобилей</div>
+        <a class="btn btn--or" href="tel:+77000000000"><svg class="i"><use href="#i-phone"/></svg><span>Позвонить</span></a>
+        <a class="btn btn--wa" href="#zayavka"><svg class="i"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
+        <span class="hand">Быстро. Надёжно.<br>Профессионально.</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <a class="logo" href="#top"><svg class="i" style="color:var(--or)"><use href="#i-logo"/></svg><span><b style="color:#fff">AUTO-<em>VOLT</em></b><small>Автоэлектрик · Алматы и область</small></span></a>
+    <nav aria-label="Подвал"><a href="#uslugi">Услуги</a><a href="#cena">Цены</a><a href="#raboty">Наши работы</a><a href="#otzyvy">Отзывы</a><a href="#faq">FAQ</a></nav>
+    <a class="foot__ph" href="tel:+77000000000">+7 700 000 00 00</a>
+    <span class="foot__made">Создан в <a href="https://web-atelie.ru/" target="_blank" rel="noopener">«Веб-Ателье»</a><img src="assets/web-atelie.png" alt="" width="40" height="52" loading="lazy" decoding="async"></span>
+    <span class="foot__demo">Демо-концепт лендинга выездного автоэлектрика. Название, контакты, цены и отзывы условные, фото – из стоковой библиотеки.</span>
+  </div>
+</footer>
+
+<script>
+const b=document.querySelector('.burger'),m=document.getElementById('mnav');
+b.onclick=()=>{const on=m.classList.toggle('is-on');b.setAttribute('aria-expanded',on)};
+m.querySelectorAll('a').forEach(a=>a.onclick=()=>{m.classList.remove('is-on');b.setAttribute('aria-expanded',false)});
+const items=[...document.querySelectorAll('.rev__item')],dots=[...document.querySelectorAll('.dots i')];let k=0;
+function go(d){k=(k+d+items.length)%items.length;items.forEach((x,i)=>x.classList.toggle('is-on',i===k));dots.forEach((x,i)=>x.classList.toggle('is-on',i===k))}
+document.querySelectorAll('.rev__nav button').forEach(x=>x.onclick=()=>go(+x.dataset.d));
+</script>
+</body>
+</html>
